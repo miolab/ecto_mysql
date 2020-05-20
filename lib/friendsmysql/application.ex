@@ -7,6 +7,7 @@ defmodule Friendsmysql.Application do
 
   def start(_type, _args) do
     children = [
+      Friendsmysql.Repo,
       # Starts a worker by calling: Friendsmysql.Worker.start_link(arg)
       # {Friendsmysql.Worker, arg}
     ]

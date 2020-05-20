@@ -57,8 +57,6 @@
   $ cd friendsmysql
   ```
 
-# on going
-
 - mix.exs
 
   ```elixir:mix.exs
@@ -143,10 +141,48 @@
     ecto_repos: [Friendsmysql.Repo]        --> add
   ```
 
-- lib/friends/application.ex
+- lib/friendsmysql/application.ex
 
   ```elixir:lib/friends/application.ex
   def start(_type, _args) do
     children = [
       Friendsmysql.Repo,        --> add
   ```
+
+  ```elixir:lib/friendsmysql/repo.ex
+  defmodule Friendsmysql.Repo do
+    use Ecto.Repo,
+      otp_app: :friendsmysql,
+      adapter: Ecto.Adapters.MyXQL
+  end
+  ```
+
+- ターミナル
+
+  ```
+  $ mix ecto.create
+  Compiling 3 files (.ex)
+  Generated friendsmysql app
+  The database for Friendsmysql.Repo has been created
+  ```
+
+  - 結果確認（DB）
+
+    ```mysql
+    mysql> show databases;
+    +--------------------+
+    | Database           |
+    +--------------------+
+      .
+      .
+    | friendsmysql_repo  |
+      .
+      .
+
+    ```
+
+
+
+---
+---
+# on going
