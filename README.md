@@ -1,8 +1,10 @@
 # Ecto & MySQL
 
-`Elixir` の __Databaseラッパー__ であり __Queryジェネレータ__ である `Ecto` で、いろいろお試しします。
+`Elixir`のDatabaseラッパーでありQueryジェネレータである`Ecto`で、いろいろお試しします。
 
-- `MySQL` に連携し、データ作成・読み出し・更新・削除（= `CRUD`）操作を行います。
+- `MySQL`に連携し、データ作成・読み出し・更新・削除（= `CRUD`）操作を行っていきます。
+
+- `IEx`で動作確認をします。
 
 ### 実行環境
 
@@ -18,13 +20,14 @@
 
 - [Ecto (Hexdocs)](https://hexdocs.pm/ecto/Ecto.html)
 
-  - [Getting Started](https://hexdocs.pm/ecto/getting-started.html) のドキュメントを参考としつつ、`MySQL` バージョンへアレンジして実装を進めていきます。（ドキュメントでは `PostgreSQL` を使用）
+  - [Getting Started](https://hexdocs.pm/ecto/getting-started.html) のドキュメントを参考としつつ、`MySQL`バージョンにアレンジして実装を進めていきます。
+  （ドキュメントでは`PostgreSQL`を使用）
 
-ーーー
+---
 
 ## プロジェクト作成とEctoセットアップ
 
-プロジェクト名を `friendsmysql` としてセットアップしていきます。
+プロジェクト名を`friendsmysql`としてセットアップしていきます。
 
 - ターミナル
 
@@ -51,5 +54,5 @@
   ```
 
   ```bash
-  $ cd friendsmysql/
+  $ cd friendsmysql
   ```
