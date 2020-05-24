@@ -616,7 +616,7 @@ INSERT INTO `people` (`age`,`first_name`,`last_name`) VALUES (?,?,?) [26, "Jane"
 INSERT INTO `people` (`age`,`first_name`,`last_name`) VALUES (?,?,?) [28, "im", "miolab"]
 ```
 
-前回の記事みたいに、1件だけ`insert`実行するには、以下の通りです。
+前段同様、1件だけ`insert`実行するには、以下の通りです。
 
 ```terminal:terminal
 iex(3)> iiii = %Friendsmysql.Person{first_name: "iiii", last_name: "mimimi", age: 18}
@@ -711,9 +711,6 @@ INSERT INTO `people` (`age`,`first_name`,`last_name`) VALUES (?,?,?) [18, "iiii"
     }
   ]
   ```
-
-  文字どおりレコード全件読み出しです。
-  （`SELECT * FROM table`相当）
 
 ### `id`を指定してレコード取得
 
@@ -833,12 +830,12 @@ INSERT INTO `people` (`age`,`first_name`,`last_name`) VALUES (?,?,?) [18, "iiii"
   ]
   ```
 
-  2人の_Smithさん_を抽出しました。
+  2人の _Smithさん_ を抽出しました。
 
 ### 絞り込み抽出
 
 複数の抽出条件を組み合わせることもできます。
-といっても、パイプライン演算子で繋ぐだけでOKです。
+パイプライン演算子で繋ぐだけでOKです。
 
 `last_name`条件抽出に、`first_name`条件抽出をつないで、`AND`検索っぽくクエリをアレンジします。
 
@@ -858,7 +855,7 @@ SELECT p0.`id`, p0.`first_name`, p0.`last_name`, p0.`age` FROM `people` AS p0 WH
 ]
 ```
 
-`last_name`が_Smith_で、かつ`age`が_27_の人を抽出しました。
+`last_name`が _Smith_ で、かつ`age`が _27_ の人を抽出しました。
 
 ### その他、抽出いろいろ
 
@@ -922,8 +919,6 @@ SELECT p0.`id`, p0.`first_name`, p0.`last_name`, p0.`age` FROM `people` AS p0 WH
   ]
   ```
 
-  この他にも、抽出方法は__公式リファレンス__に記載がありますので、見て試してみられると良いかとおもいます。
-
   - Ecto.Query 参考
 
     - [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html)
@@ -977,7 +972,7 @@ SELECT p0.`id`, p0.`first_name`, p0.`last_name`, p0.`age` FROM `people` AS p0 WH
   }
   ```
 
-  上記で準備した_Ryanさん_の`age: 28`を、`29`に更新してみます。
+  上記で準備した _Ryanさん_ の`age: 28`を、`29`に更新してみます。
 
   ```
   iex(3)> change_age_twentynine = Friendsmysql.Person.changeset(ryan, %{age: 29})
@@ -1083,4 +1078,4 @@ SELECT p0.`id`, p0.`first_name`, p0.`last_name`, p0.`age` FROM `people` AS p0 WH
   ]
   ```
 
-  _Ryanさん_のレコードが削除されました。
+  _Ryanさん_ のレコードが削除されました。
